@@ -1,5 +1,5 @@
 //xixi 2015Äê1ÔÂ23ÈÕ22:08:46
-#include"DataStruc.h"
+#include"DataStruct.h"
 #include<stdlib.h>
 Status InitLIst_L(LinkList *L)
 {

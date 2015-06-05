@@ -1,3 +1,4 @@
+#include<stdlib.h>
 void Swap(int *a, int *b){
 	int tmp;
 	tmp = *a;
@@ -24,13 +25,33 @@ int FindMaxDig(int a[], int n){
 }
 
 void RadixSort(int a[], int len){
-	int i, j;
-	int k = FindMaxDig(a, len);
-	for (i = 0; i < len; i++){
-		//printf("%d\n", NPosition(a[i], 2));
-		for (j = 1; j <= len; j++){
-			//NPosition(a[i],j)
+	int i, j, k, id, pos;
+	id = 0; k = 0;
+	int buckets[9][20] = { 0 };
+	int max_dig = FindMaxDig(a, len);
+	for (i = 1; i <=max_dig; i++){
+
+
+		for (j = 0; j <len; j++){
+			pos = NPosition(a[j], i);
+
+
+			while (buckets[pos][k])k++;
+			buckets[pos][k] = a[j];
+			k = 0;
+
+
 		}
+
+		for (j = 0; j < 9; j++){
+			for (k = 0;k<20;k++)
+			if (buckets[j][k] == 0)
+				break;
+			else
+				a[id++] = buckets[j][k];
+		}
+
+
 	}
 }
 

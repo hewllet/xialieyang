@@ -1,4 +1,4 @@
-#include"DataStruc.h"
+#include"DataStruct.h"
 #include "Queue.h"
 #include"Stack.h"
 Status InitBiTree(BiTree *T)
@@ -20,15 +20,11 @@ void DestroyBiTree(BiTree *T)
 	}
 }
 
-
-
-Status CreateBiTree(BiTree *T)
-{
+Status CreateBiTree(BiTree *T){
 	TElemType node;
 	scanf("%c", &node);
 	if (node == ' ') *T = NULL;
-	else
-	{
+	else{
 		*T = (BiTNode *)malloc(sizeof(BiTNode));
 		if (!*T) exit(OVERFLOW);
 		(*T)->data = node;
@@ -38,17 +34,14 @@ Status CreateBiTree(BiTree *T)
 	}			
 }
 
-Status BiTreeEmpty(BiTree T)
-{ /* 初始条件: 二叉树T存在 */
-  /* 操作结果: 若T为空二叉树,则返回TRUE,否则FALSE */
+Status BiTreeEmpty(BiTree T){ 
 	if (T)
 		return FALSE;
 	else
 		return TRUE;
 }
 
-TElemType Root(BiTree T)
-{ /* 初始条件: 二叉树T存在。操作结果: 返回T的根 */
+TElemType Root(BiTree T){ 
 	if (BiTreeEmpty(T))
 		return 0;
 	else
@@ -57,8 +50,7 @@ TElemType Root(BiTree T)
 
 
 
-Status PreorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
-{
+Status PreorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e)){
 	SqStack S;
 	SElemType e;
 	InitStack(&S);
@@ -77,9 +69,7 @@ Status PreorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
 
 }
 
-Status InorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
-{
-
+Status InorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e)){
 	SqStack S;
 	SElemType e;
 	InitStack(&S);
@@ -98,8 +88,7 @@ Status InorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
 	}
 }
 
-Status PostorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
-{
+Status PostorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e)){
 	SqStack S;
 	SElemType e, tmp, root = T;
 	InitStack(&S);
@@ -129,8 +118,7 @@ Status PostorderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
 	return;
 }
 
-Status LevelOrderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
-{
+Status LevelOrderTraverse(BiTree T, Status(*TreeVisit)(TElemType e)){
 	SqQueue Q;
 	QElemType e;
 	InitQueue(&Q);
@@ -144,8 +132,7 @@ Status LevelOrderTraverse(BiTree T, Status(*TreeVisit)(TElemType e))
 	}
 }
 
-void TreeVisit(TElemType e)
-{
+void TreeVisit(TElemType e){
 	printf("%c\n", e);
 
 }
