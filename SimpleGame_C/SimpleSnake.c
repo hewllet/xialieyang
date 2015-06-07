@@ -57,17 +57,17 @@ int IsEat(){
 void Init(){
 	char kb = 's', default_kb = 's';
 	Randomxy(&snake->posx, &snake->posy);
-	snake->next = snake; snake->prv = snake;	tail = snake;//¹¹³ÉÑ­»·
+	snake->next = snake; snake->prv = snake;	tail = snake;//æ„æˆå¾ªç¯
 	Paint(body); CreateFood();
 	while (1){
 		if (kbhit())kb = getch(); if (kb < 97) kb += 32;
 		switch (kb){
-		case'w': if (default_kb != 's'){ ; Move; tail->posy--; }else kb = default_kb; break;
+		case'w': if (default_kb != 's'){ Move; tail->posy--; }else kb = default_kb; break;
 		case 's':if (default_kb != 'w') { Move; tail->posy++; }else kb = default_kb; break;
 		case'a':  if (default_kb != 'd') { Move; tail->posx--; }else kb = default_kb; break;
 		case'd':  if (default_kb != 'a'){ Move; tail->posx++; }else  kb = default_kb; break;
 		}	
-		default_kb = kb; snake = tail;  tail = tail->prv; //ĞÂµÄÍ·½áµã,ÒªÒ»¸ö½Úµã±ê¼ÇÉßÉí×îºóÒ»¸ö	
+		default_kb = kb; snake = tail;  tail = tail->prv; //æ–°çš„å¤´ç»“ç‚¹,è¦ä¸€ä¸ªèŠ‚ç‚¹æ ‡è®°è›‡èº«æœ€åä¸€ä¸ª	
 		if (IsEat()) {CreateFood(); CreateNode(); Paint(create);}
 		Paint(body);
 	}
