@@ -1,3 +1,8 @@
+/*----------------------
+*Data:2015/06/07
+*Platform:Windows
+*Author:XiXi
+----------------------*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<windows.h>
