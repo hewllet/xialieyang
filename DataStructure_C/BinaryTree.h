@@ -1,14 +1,12 @@
 #include"DataStruct.h"
 #include "Queue.h"
 #include"Stack.h"
-Status InitBiTree(BiTree *T)
-{
+Status InitBiTree(BiTree *T){
 	*T = NULL;
 	return OK;
 }
 
-void DestroyBiTree(BiTree *T)
-{
+void DestroyBiTree(BiTree *T){
 	if (*T)
 	{
 		if((*T)->lchild)

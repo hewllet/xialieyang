@@ -1,10 +1,18 @@
-/*线索二叉树 赫夫曼树 
-*/
-#include"DataStruct.h"
+/*-----------------------------
+*Include:线索二叉树，赫夫曼树
+*Data:2015/06/05
+------------------------------*/
 
+
+
+#include"DataStruct.h"
 BiThrTree gPreNode;//线索结点
 
-/***线索二叉树***/
+
+/*---------------------
+Name:线索二叉树
+*Data:2015/06/05
+----------------------*/
 void CreateBiThrTree(BiThrTree *T){
 	char c;
 	scanf("%c", &c);
@@ -59,5 +67,8 @@ void InorderThreading( BiThrTree *thrNode,BiThrTree T  ){
 
 
 
-/*哈夫曼编码*/
+/*--------------------
+*Nmae:哈夫曼编码
+*Data:
+---------------------*/
 

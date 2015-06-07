@@ -80,8 +80,7 @@ Status QueueTraverse(SqQueue Q, void(*QueueVisit)(QElemType))
 	return OK;
 }
 
-Status QueueVisit(QElemType e)
-{
+Status QueueVisit(QElemType e){
 	printf("%d\n", e);
 	return 0;
 }

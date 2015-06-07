@@ -6,6 +6,7 @@ void Swap(int *a, int *b){
 	*b = tmp;
 }
 
+
 int NPosition(int num, int n){
 	if (n > 1)
 		return (num / ((n - 1) * 10)) % 10;
@@ -30,19 +31,12 @@ void RadixSort(int a[], int len){
 	int buckets[9][20] = { 0 };
 	int max_dig = FindMaxDig(a, len);
 	for (i = 1; i <=max_dig; i++){
-
-
 		for (j = 0; j <len; j++){
 			pos = NPosition(a[j], i);
-
-
 			while (buckets[pos][k])k++;
 			buckets[pos][k] = a[j];
 			k = 0;
-
-
 		}
-
 		for (j = 0; j < 9; j++){
 			for (k = 0;k<20;k++)
 			if (buckets[j][k] == 0)
@@ -50,12 +44,15 @@ void RadixSort(int a[], int len){
 			else
 				a[id++] = buckets[j][k];
 		}
-
-
 	}
 }
 
 
+
+/*-------------------------
+*Name:堆排序
+*Data:2015/06/05
+--------------------------*/
 void HeapSwap(int a[], int max, int tail){
 	int tmp;
 	tmp = a[max];
@@ -91,7 +88,10 @@ void Heapsort(int a[],int len){
 
 
 
-
+/*-----------------------
+*Name:归并排序(递归)
+*Data:2015/06/05
+------------------------*/
 void merging(int *list1,int list1_size,int *list2,int list2_size,int array_size){
 	int i, j, k, m;
 	int *tmp = (int *)malloc(sizeof(int)*array_size);
@@ -122,6 +122,11 @@ void Mergesort(int *a,int n){
 	}
 }
 
+
+/*-----------------------
+*Name:快速排序
+*Data:2015/06/05
+-------------------------*/
 void Quicksort(int *a, int sta, int end)
 {
 	int i;
@@ -149,11 +154,13 @@ void Quicksort(int *a, int sta, int end)
 		Quicksort(a, tmp + 1, high);
 	}
 	}
-/*插入排序 
-	时间复杂度：
-	主要思想：
-*/
 
+
+
+/*-----------------------
+*Name:插入排序
+*Data:2015/06/05
+------------------------*/
 void Insertsort(int *a, int n)
 {
 	int i, j, k, tmp;
@@ -172,10 +179,10 @@ void Insertsort(int *a, int n)
 }
 
 
-/**********插入排序**********
-时间复杂度：
-主要思想：
-*/
+/*-----------------------
+*Name:shell排序
+*Data:2015/06/05
+-------------------------*/
 void Shellsort(int *a,int n)
 {
 	int i, j, k, gap = n / 2, tmp;
@@ -193,10 +200,10 @@ void Shellsort(int *a,int n)
 			}
 		}//for
 }
-/**********冒泡排序**********
-时间复杂度：
-主要思想：
-*/
+/*-----------------------
+*Name:冒泡排序
+*Data:2015/06/05
+-------------------------*/
 void Bubblesort(int *a, int n)
 {
 	int i, j;
@@ -204,10 +211,13 @@ void Bubblesort(int *a, int n)
 	for (j = 1; j<n - i; j++)
 	if (a[j - 1] > a[j])  Swap(&a[j - 1], &a[j]);
 }
-/**********选择排序**********
-时间复杂度：
-主要思想：
-*/
+
+
+
+/*------------------------
+*Name:选择排序
+*Data:2015/06/05
+--------------------------*/
 void Selectsort(int *a,int n)
 {
 	int i, j, id;
