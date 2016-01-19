@@ -23,9 +23,8 @@ void Paint(int no){
 	Element *p = snake;
 		if (no == body){
 			Gotoxy(p->posx, p->posy); printf("@");
-			while (p->next != snake){
+			while (p->next != snake)
 				p = p->next; Gotoxy(p->posx, p->posy); printf("@");
-			}
 		}
 		else if (no == remove){ Gotoxy(tail->posx, tail->posy); printf(" "); }
 		tail->posx = p->posx; tail->posy = p->posy;
