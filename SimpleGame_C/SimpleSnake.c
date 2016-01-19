@@ -8,14 +8,13 @@
 #define remove 1
 #define create 2
 #define Move Sleep(300); Paint(remove)
+#define malloc_elem (Element*)malloc(sizeof(Element))
 typedef struct Element{
 	int posx; int posy;
 	struct Element *next;
 	struct Element *prv;
 }Element;
-Element *snake = (Element*)malloc(sizeof(Element));
-Element*food = (Element*)malloc(sizeof(Element));
-Element *tail= (Element*)malloc(sizeof(Element));
+Element* snake = malloc_elem, *food=malloc_elem,*tail=malloc_elem;
 void Gotoxy(int x,int y){
 	COORD pos; pos.X = x; pos.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
