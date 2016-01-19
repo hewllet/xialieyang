@@ -10,8 +10,7 @@
 #define malloc_elem (Element*)malloc(sizeof(Element))
 typedef struct Element{
 	int posx; int posy;
-	struct Element *next;
-	struct Element *prv;
+	struct Element *next,*prv;
 }Element;
 Element* snake = malloc_elem, *food=malloc_elem,*tail=malloc_elem;
 void Gotoxy(int x,int y){
